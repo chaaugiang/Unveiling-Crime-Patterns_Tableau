@@ -3,7 +3,7 @@
 ## Project Overview
 This Tableau project leverages crime data from Los Angeles (2020-2023) to identify high-crime zones and analyze identity theft trends. By creating visualizations like pie charts, bar charts, and line graphs, the project pinpoints areas with frequent car thefts and reveals a concerning rise in female identity theft cases. These insights can help police allocate resources more effectively and guide cybersecurity strategies.
 
-## Team members:
+## Contributors:
 Thai Le, Alvia Pham, Essex Glowaki, Kenneth Johnson, McKenna Sloan
 
 ## Insight 1
