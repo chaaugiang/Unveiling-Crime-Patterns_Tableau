@@ -30,16 +30,16 @@ The 77th Street and Newton LAPD areas showed particularly high concentrations of
 Broadway, Central Ave, and Main Street emerged as the streets with the highest vehicle-theft counts in the analysis.
 Identity theft reports showed different patterns across victim genders, including a pronounced increase among female victims beginning in 2021.
 
-## Analysis 1: Geographic Patterns in High-Frequency Crime
+### Analysis 1: Geographic Patterns in High-Frequency Crime
 ### Of the most prevalent types of crime, where do the majority of incidents occur?
 
 <img width="500" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
-### Data Preparation
+## Data Preparation
 
 To support the analysis, we performed two primary transformations.
 
-## Crime Category Grouping
+# Crime Category Grouping
 
 The original Crm Cd Desc field contained highly specific crime descriptions such as:
 
@@ -49,7 +49,7 @@ Theft, Coin Machine
 
 We grouped related descriptions into broader categories such as Theft, allowing similar offenses to be analyzed together.
 
-## Crime Percentage Calculation
+# Crime Percentage Calculation
 
 A Tableau calculated field was created to measure each crime category as a percentage of total reported incidents:
 
@@ -77,7 +77,7 @@ Within these two areas, 86.82% of analyzed vehicle thefts occurred on streets, r
 
 Further analysis at the street level identified Broadway, Central Ave, and Main Street as the streets with the highest vehicle-theft counts.
 
-### Takeaway
+## Takeaway
 
 The results demonstrate how crime data can be analyzed at increasingly granular geographic levels—from citywide crime categories to LAPD areas and individual streets.
 
@@ -85,20 +85,20 @@ Rather than distributing resources uniformly across locations, geographic crime 
 
 
 
-## Analysis 2: Identity Theft Trends by Gender
+### Analysis 2: Identity Theft Trends by Gender
 ### How did monthly identity theft reports differ by victim gender between 2020 and 2023?
 
 <img width="479" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
-### Data Preparation
+## Data Preparation
 
 Two adjustments were made before visualization:
 
-## Incomplete Period Filtering
+# Incomplete Period Filtering
 
 November 2023 was excluded because the available observations appeared incomplete relative to previous months and could distort the time-series analysis.
 
-## Date Transformation
+# Date Transformation
 
 The DATE OCC field was transformed into discrete month and year values to support month-over-month comparisons.
 
@@ -122,7 +122,7 @@ A line chart was used to highlight the timing, direction, and magnitude of these
 
 The linear graph is optimal for visualizing this data as it depicts the rate of change, emphasizing the rapid growth of identity theft incidents between the two groups. This is crucial for analysts and decision-makers to understand the magnitude and timing of the events and to investigate potential causes and remedies for the observed disparities.
 
-### Takeaway
+## Takeaway
 
 The results suggest that identity theft trends were not uniform across victim demographics during the analyzed period.
 
