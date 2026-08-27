@@ -9,7 +9,7 @@ Thai Le, Alvia Pham, Essex Glowaki, Kenneth Johnson, McKenna Sloan
 ## Insight 1
 ### Of the most prevalent types of crimes committed, where do a majority of them take place?
 
-<img width="479" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
+<img width="500" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
 #### Importance: 
 
