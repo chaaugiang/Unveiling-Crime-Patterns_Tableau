@@ -30,8 +30,8 @@ The 77th Street and Newton LAPD areas showed particularly high concentrations of
 Broadway, Central Ave, and Main Street emerged as the streets with the highest vehicle-theft counts in the analysis.
 Identity theft reports showed different patterns across victim genders, including a pronounced increase among female victims beginning in 2021.
 
-### Analysis 1: Geographic Patterns in High-Frequency Crime
-### Of the most prevalent types of crime, where do the majority of incidents occur?
+# Analysis 1: Geographic Patterns in High-Frequency Crime
+# Of the most prevalent types of crime, where do the majority of incidents occur?
 
 <img width="500" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
@@ -39,7 +39,7 @@ Identity theft reports showed different patterns across victim genders, includin
 
 To support the analysis, we performed two primary transformations.
 
-# Crime Category Grouping
+### Crime Category Grouping
 
 The original Crm Cd Desc field contained highly specific crime descriptions such as:
 
@@ -49,7 +49,7 @@ Theft, Coin Machine
 
 We grouped related descriptions into broader categories such as Theft, allowing similar offenses to be analyzed together.
 
-# Crime Percentage Calculation
+### Crime Percentage Calculation
 
 A Tableau calculated field was created to measure each crime category as a percentage of total reported incidents:
 
@@ -59,19 +59,19 @@ COUNT([Dr No]) / TOTAL(COUNT([Dr No]))
 
 We built a sequence of Tableau visualizations to progressively narrow the analysis from overall crime patterns to specific high-risk locations.
 
-# 1. Crime Distribution
+### 1. Crime Distribution
 
 A pie chart comparing major crime categories showed that theft represented 48.89% of reported crimes, making it the largest category in the analysis.
 
-# 2. Theft Breakdown
+### 2. Theft Breakdown
 
 A bar chart was then used to examine individual theft categories. Vehicle theft emerged as the most common type of theft.
 
-# 3. Geographic Distribution
+### 3. Geographic Distribution
 
 Vehicle theft incidents were plotted geographically using a symbol map. The 77th Street LAPD area recorded the highest concentration, followed closely by Newton.
 
-# 4. Location Analysis
+### 4. Location Analysis
 
 Within these two areas, 86.82% of analyzed vehicle thefts occurred on streets, rather than other location types such as parking structures or residential driveways.
 
@@ -85,8 +85,8 @@ Rather than distributing resources uniformly across locations, geographic crime 
 
 
 
-### Analysis 2: Identity Theft Trends by Gender
-### How did monthly identity theft reports differ by victim gender between 2020 and 2023?
+# Analysis 2: Identity Theft Trends by Gender
+# How did monthly identity theft reports differ by victim gender between 2020 and 2023?
 
 <img width="479" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
@@ -94,11 +94,11 @@ Rather than distributing resources uniformly across locations, geographic crime 
 
 Two adjustments were made before visualization:
 
-# Incomplete Period Filtering
+### Incomplete Period Filtering
 
 November 2023 was excluded because the available observations appeared incomplete relative to previous months and could distort the time-series analysis.
 
-# Date Transformation
+### Date Transformation
 
 The DATE OCC field was transformed into discrete month and year values to support month-over-month comparisons.
 
