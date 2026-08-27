@@ -1,80 +1,117 @@
 # Unveiling Crime Patterns and Insights in Los Angeles
+Tableau | Data Visualization | Data Analysis | Geospatial Analysis
+An exploratory analysis of Los Angeles crime data from 2020–2023, using Tableau to uncover geographic and demographic patterns in reported crime.
 
 ## Project Overview
-This Tableau project leverages crime data from Los Angeles (2020-2023) to identify high-crime zones and analyze identity theft trends. By creating visualizations like pie charts, bar charts, and line graphs, the project pinpoints areas with frequent car thefts and reveals a concerning rise in female identity theft cases. These insights can help police allocate resources more effectively and guide cybersecurity strategies.
+This project analyzes 847K+ reported crime incidents in Los Angeles to identify meaningful patterns in crime type, location, and victim demographics.
+
+Using Tableau, we transformed raw crime data into interactive visualizations to answer two primary questions:
+
+Where are the most prevalent crimes concentrated in Los Angeles?
+How have identity theft trends differed by victim gender over time?
+
+The analysis combines data cleaning, calculated fields, geographic visualization, and trend analysis to translate a large public dataset into actionable insights.
 
 ## Contributors:
 Thai Le, Alvia Pham, Essex Glowaki, Kenneth Johnson, McKenna Sloan
 
-## Insight 1
-### Of the most prevalent types of crimes committed, where do a majority of them take place?
+## Tools & Skills
+Tableau — dashboards, calculated fields, filtering, and interactive visualizations
+Data Cleaning & Transformation — grouped detailed crime descriptions into broader analytical categories
+Geospatial Analysis — mapped crime incidents by LAPD area and location
+Trend Analysis — analyzed monthly identity theft patterns from 2020–2023
+Data Storytelling — translated visual findings into operational recommendations
+
+## Key Findings
+Theft accounted for 48.89% of reported crimes in the analyzed data.
+Vehicle theft was the most common theft category.
+The 77th Street and Newton LAPD areas showed particularly high concentrations of vehicle theft.
+86.82% of vehicle thefts analyzed within these two areas occurred on streets rather than locations such as parking structures or driveways.
+Broadway, Central Ave, and Main Street emerged as the streets with the highest vehicle-theft counts in the analysis.
+Identity theft reports showed different patterns across victim genders, including a pronounced increase among female victims beginning in 2021.
+
+## Analysis 1: Geographic Patterns in High-Frequency Crime
+### Of the most prevalent types of crime, where do the majority of incidents occur?
 
 <img width="500" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
-#### Importance: 
+### Data Preparation
 
-The specific location of crimes committed is extremely important for police to determine where to allocate their resources. For example, if they assigned the same number of police officers to each area within LA, some communities would be disproportionately patrolled. 
+To support the analysis, we performed two primary transformations.
 
-This would leave under-patrolled areas with too many crimes for their officers to respond to, which would result in a slow response rate, an inefficient use of police funds, and an increase in preventable crimes. However, if we can pinpoint the main locations where common crimes take place, these issues could be significantly reduced.
+## Crime Category Grouping
 
-#### Manipulations to dataset: 
+The original Crm Cd Desc field contained highly specific crime descriptions such as:
 
-We made two main modifications to our dataset:
+Theft from Motor Vehicle
+Theft from Person
+Theft, Coin Machine
 
-1. **Categorizing Crime Descriptions**:
+We grouped related descriptions into broader categories such as Theft, allowing similar offenses to be analyzed together.
 
-The "Crm Cd Desc" column, which describes the type of crime, needed broader classifications. For example, it contained descriptions like "Theft from Motor Vehicle," "Theft from Person," "Theft, Coin Machine," etc. These slight differences were irrelevant to our initial calculation, so we grouped them under broader categories like "Theft" to aggregate similar types of crimes.
+## Crime Percentage Calculation
 
-2. **Calculating Crime Type Percentages**:
+A Tableau calculated field was created to measure each crime category as a percentage of total reported incidents:
 
-We added a calculated field called "% Crm Cd Desc (group)" to determine the percentage of specific crimes reported, relative to the total cases. This was necessary for creating pie chart visualizations. We calculated this by counting the number of unique IDs for each crime type and dividing that by the total number of unique IDs in the dataset. The formula used was: “COUNT([Dr No]) / TOTAL(COUNT([Dr No]))”
+COUNT([Dr No]) / TOTAL(COUNT([Dr No]))
+
+## Analysis
+
+We built a sequence of Tableau visualizations to progressively narrow the analysis from overall crime patterns to specific high-risk locations.
+
+# 1. Crime Distribution
+
+A pie chart comparing major crime categories showed that theft represented 48.89% of reported crimes, making it the largest category in the analysis.
+
+# 2. Theft Breakdown
+
+A bar chart was then used to examine individual theft categories. Vehicle theft emerged as the most common type of theft.
+
+# 3. Geographic Distribution
+
+Vehicle theft incidents were plotted geographically using a symbol map. The 77th Street LAPD area recorded the highest concentration, followed closely by Newton.
+
+# 4. Location Analysis
+
+Within these two areas, 86.82% of analyzed vehicle thefts occurred on streets, rather than other location types such as parking structures or residential driveways.
+
+Further analysis at the street level identified Broadway, Central Ave, and Main Street as the streets with the highest vehicle-theft counts.
+
+### Takeaway
+
+The results demonstrate how crime data can be analyzed at increasingly granular geographic levels—from citywide crime categories to LAPD areas and individual streets.
+
+Rather than distributing resources uniformly across locations, geographic crime patterns can help decision-makers identify areas where targeted patrols, prevention programs, or further investigation may have the greatest impact.
 
 
-#### Analysis and Results: 
 
-We created four charts to identify the main location of the most common types of crime:
-
-1. **Pie Chart**:
-   - This chart showed that theft was the most common crime, accounting for 48.89% of all crimes.
-   - Within the "Theft" category, there were various sub-categories to consider.
-
-2. **Bar Chart**:
-   - This chart revealed that stolen vehicles were the most common type of theft.
-
-3. **Symbol Map**:
-   - This map displayed the locations of vehicle thefts.
-   - We found that "77th Street" was the area most prone to vehicle thefts, with "Newton" being a close second.
-
-4. **Pie Chart**:
-   - This chart showed that 86.82% of vehicles stolen around "77th Street" and "Newton" were taken from the street (as opposed to other locations like parking decks or driveways).
-
-Finally, we sorted the results by street name. This sorting revealed that the three streets most affected by car thefts were "Broadway," "Central Ave," and "Main Street."
-
-### Insights & Suggestion:
-These findings indicate specific streets where police should focus their efforts. For example, "Broadway" has had 83 cars stolen since 2020, whereas "Woodlawn" and "West 84th" each only had 1 car theft in the same period. By allocating more resources to streets like "Broadway," police can respond to reports faster, use their funds more efficiently, and enhance safety for community members in these areas.
-
-## Insight 2
-### How have the monthly counts of identity theft incidents between genders changed?
+## Analysis 2: Identity Theft Trends by Gender
+### How did monthly identity theft reports differ by victim gender between 2020 and 2023?
 
 <img width="479" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
-#### Importance:
+### Data Preparation
 
-This question compares identity theft incidents affecting different genders over time to identify patterns, trends, or anomalies. The pandemic accelerated the shift to digital services and online financial activities, leading to an increase in scams and data breaches. By analyzing trends specific to different demographics, cybersecurity experts and policymakers can improve online safety protocols and adjust legal frameworks to better support victims. Service providers and financial institutions can also enhance their fraud detection systems to reduce these crimes. This analysis highlights the need for a tailored cybersecurity approach to address the unique challenges faced by different demographics.
+Two adjustments were made before visualization:
 
-#### Manipulations to Dataset:
+## Incomplete Period Filtering
 
-We made two main modifications to our dataset:
+November 2023 was excluded because the available observations appeared incomplete relative to previous months and could distort the time-series analysis.
 
-1. **Filtering Outliers**:
-   - We excluded the month of November 2023 because it displayed results outside the expected range, likely due to incomplete data for that month.
+## Date Transformation
 
-2. **Adjusting Date Format**:
-   - We modified the "Date Occ" column to show discrete values for months and years instead of continuous ones, allowing us to present data more accurately at specific points in time.
+The DATE OCC field was transformed into discrete month and year values to support month-over-month comparisons.
 
-#### Analysis and Results:
+## Analysis
 
-The graph indicates a significant divergence in identity theft trends between females and males from 2020 to 2023. 
+A time-series visualization was created to compare reported identity theft incidents among male and female victims.
+
+The analysis revealed a noticeable divergence between the two groups:
+
+Identity theft reports involving female victims increased sharply beginning in 2021, followed by a substantial peak and subsequent decline.
+Reports involving male victims remained comparatively stable, without an increase of the same magnitude.
+
+A line chart was used to highlight the timing, direction, and magnitude of these changes across the analysis period.
 
 - **Females (Pink Line)**:
   - The trend was relatively stable in 2020.
@@ -85,9 +122,13 @@ The graph indicates a significant divergence in identity theft trends between fe
 
 The linear graph is optimal for visualizing this data as it depicts the rate of change, emphasizing the rapid growth of identity theft incidents between the two groups. This is crucial for analysts and decision-makers to understand the magnitude and timing of the events and to investigate potential causes and remedies for the observed disparities.
 
-### Insights & Suggestions:
+### Takeaway
 
-These findings indicate the importance of targeted cybersecurity measures. For example, the sharp increase in identity theft incidents among females in 2021 suggests a need for specific interventions during that period. By understanding these trends, authorities can allocate resources more effectively, enhance protective measures, and develop targeted awareness campaigns to reduce identity theft incidents across different demographics.
+The results suggest that identity theft trends were not uniform across victim demographics during the analyzed period.
+
+The sharp change in reports involving female victims warrants deeper investigation into potential contributing factors. Additional demographic, financial, or incident-level data would be necessary to determine the underlying causes.
+
+From an analytical perspective, segmenting cyber-enabled crime trends by demographic characteristics can help organizations identify patterns that may be obscured when examining aggregate incident counts alone.
 
 ## Dataset Description
 The dataset is sourced from incidents of crime in the City of Los Angeles dating back to 2020. The data is transcribed from original crime reports that are typed on paper.There are 847726 columns and 28 rows.
