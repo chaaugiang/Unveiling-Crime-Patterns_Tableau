@@ -31,9 +31,9 @@ Broadway, Central Ave, and Main Street emerged as the streets with the highest v
 Identity theft reports showed different patterns across victim genders, including a pronounced increase among female victims beginning in 2021.
 
 # Analysis 1: Geographic Patterns in High-Frequency Crime
-# Of the most prevalent types of crime, where do the majority of incidents occur?
+## Of the most prevalent types of crime, where do the majority of incidents occur?
 
-<img width="500" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
+<img width="530" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
 ## Data Preparation
 
@@ -86,9 +86,9 @@ Rather than distributing resources uniformly across locations, geographic crime 
 
 
 # Analysis 2: Identity Theft Trends by Gender
-# How did monthly identity theft reports differ by victim gender between 2020 and 2023?
+## How did monthly identity theft reports differ by victim gender between 2020 and 2023?
 
-<img width="479" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
+<img width="530" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
 ## Data Preparation
 
