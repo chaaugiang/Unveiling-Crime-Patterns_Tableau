@@ -1,26 +1,24 @@
 # Unveiling Crime Patterns and Insights in Los Angeles
-Tableau | Data Visualization | Data Analysis | Geospatial Analysis
-An exploratory analysis of Los Angeles crime data from 2020–2023, using Tableau to uncover geographic and demographic patterns in reported crime.
+
+**Tableau · Data Visualization · Geospatial Analysis · Data Storytelling**
+
+An exploratory analysis of **847K+ Los Angeles crime records from 2020–2023**, examining where vehicle theft is concentrated and how identity theft patterns differ across victim groups
 
 ## Project Overview
-This project analyzes 847K+ reported crime incidents in Los Angeles to identify meaningful patterns in crime type, location, and victim demographics.
 
-Using Tableau, we transformed raw crime data into interactive visualizations to answer two primary questions:
+Citywide crime totals can hide important differences between neighborhoods, location types, and victim groups. This project analyzes 847K+ reported crime incidents in Los Angeles to turn detailed incident records into visual patterns that can support more focused prevention planning and further investigation
 
-Where are the most prevalent crimes concentrated in Los Angeles?
-How have identity theft trends differed by victim gender over time?
+The analysis addresses two questions:
 
-The analysis combines data cleaning, calculated fields, geographic visualization, and trend analysis to translate a large public dataset into actionable insights.
-
-## Contributors:
-Thai Le, Alvia Pham, Essex Glowaki, Kenneth Johnson, McKenna Sloan
+1. **Where are common crimes concentrated, and which locations warrant closer attention?**
+2. **How did monthly identity theft reports differ between victims recorded as male and female?**
 
 ## Tools & Skills
-Tableau — dashboards, calculated fields, filtering, and interactive visualizations
-Data Cleaning & Transformation — grouped detailed crime descriptions into broader analytical categories
-Geospatial Analysis — mapped crime incidents by LAPD area and location
-Trend Analysis — analyzed monthly identity theft patterns from 2020–2023
-Data Storytelling — translated visual findings into operational recommendations
+Tableau - dashboards, calculated fields, filtering, and interactive visualizations
+Data Cleaning & Transformation - grouped detailed crime descriptions into broader analytical categories
+Geospatial Analysis - mapped crime incidents by LAPD area and location
+Trend Analysis - analyzed monthly identity theft patterns from 2020 - 2023
+Data Storytelling - translated visual findings into operational recommendations
 
 ## Key Findings
 Theft accounted for 48.89% of reported crimes in the analyzed data.
@@ -29,6 +27,16 @@ The 77th Street and Newton LAPD areas showed particularly high concentrations of
 86.82% of vehicle thefts analyzed within these two areas occurred on streets rather than locations such as parking structures or driveways.
 Broadway, Central Ave, and Main Street emerged as the streets with the highest vehicle-theft counts in the analysis.
 Identity theft reports showed different patterns across victim genders, including a pronounced increase among female victims beginning in 2021.
+
+| Finding | What it means for decision makers |
+|---|---|
+| **Theft represented 48.89%** of analyzed crime records | Theft is a substantial part of the reported crime workload and a useful starting point for deeper analysis |
+| **Vehicle theft was the largest theft category**, with high counts in the **77th Street and Newton LAPD areas** | These areas are candidates for closer review of vehicle-theft prevention needs |
+| **86.82% of vehicle thefts within those two areas occurred on streets** | Prevention efforts could focus on street parking conditions, resident awareness, and specific locations |
+| **Broadway, Central Ave, and Main Street** had the highest vehicle theft counts in the street-level analysis | Street level findings help narrow broad geographic priorities into locations for further assessment |
+| Identity theft reports involving **female victims rose sharply beginning in 2021**, while male victim reports were comparatively stable | Demographic breakdowns can reveal changes that aggregate crime totals may obscure |
+
+These findings identify **where to investigate and what to examine next**. They do not establish causes or demonstrate that a particular intervention would reduce crime
 
 # Analysis 1: Geographic Patterns in High-Frequency Crime
 ## Of the most prevalent types of crime, where do the majority of incidents occur?
@@ -146,3 +154,7 @@ This dataset contains a range of information, each row represents a unique crime
 https://catalog.data.gov/dataset/crime-data-from-2020-to-present
 
 <img width="473" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/3cb655b0-a0d1-4b60-a075-f4f8a866ab53">
+
+
+## Contributors:
+Thai Le, Alvia Pham, Essex Glowaki, Kenneth Johnson, McKenna Sloan
