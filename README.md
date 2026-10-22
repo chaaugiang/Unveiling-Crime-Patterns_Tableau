@@ -13,20 +13,8 @@ The analysis addresses two questions:
 1. **Where are common crimes concentrated, and which locations warrant closer attention?**
 2. **How did monthly identity theft reports differ between victims recorded as male and female?**
 
-## Tools & Skills
-Tableau - dashboards, calculated fields, filtering, and interactive visualizations
-Data Cleaning & Transformation - grouped detailed crime descriptions into broader analytical categories
-Geospatial Analysis - mapped crime incidents by LAPD area and location
-Trend Analysis - analyzed monthly identity theft patterns from 2020 - 2023
-Data Storytelling - translated visual findings into operational recommendations
 
 ## Key Findings
-Theft accounted for 48.89% of reported crimes in the analyzed data.
-Vehicle theft was the most common theft category.
-The 77th Street and Newton LAPD areas showed particularly high concentrations of vehicle theft.
-86.82% of vehicle thefts analyzed within these two areas occurred on streets rather than locations such as parking structures or driveways.
-Broadway, Central Ave, and Main Street emerged as the streets with the highest vehicle-theft counts in the analysis.
-Identity theft reports showed different patterns across victim genders, including a pronounced increase among female victims beginning in 2021.
 
 | Finding | What it means for decision makers |
 |---|---|
@@ -41,56 +29,54 @@ These findings identify **where to investigate and what to examine next**. They 
 # Analysis 1: Geographic Patterns in High-Frequency Crime
 ## Of the most prevalent types of crime, where do the majority of incidents occur?
 
-<img width="530" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
+<img width="600" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
-## Data Preparation
+### Step 1: Prepare Comparable Crime Categories
 
-To support the analysis, we performed two primary transformations.
+The original `Crm Cd Desc` field contained detailed descriptions such as:
 
-### Crime Category Grouping
+- Theft from Motor Vehicle
+- Theft from Person
+- Theft, Coin Machine
 
-The original Crm Cd Desc field contained highly specific crime descriptions such as:
+We grouped related descriptions into broader categories such as **Theft**, making it easier to compare the overall distribution before examining individual offenses
 
-Theft from Motor Vehicle
-Theft from Person
-Theft, Coin Machine
+We also created a Tableau calculated field to express each category as a percentage of the analyzed records:
 
-We grouped related descriptions into broader categories such as Theft, allowing similar offenses to be analyzed together.
-
-### Crime Percentage Calculation
-
-A Tableau calculated field was created to measure each crime category as a percentage of total reported incidents:
-
+```tableau
 COUNT([Dr No]) / TOTAL(COUNT([Dr No]))
+```
 
-## Analysis
+### Step 2: Identify the Largest Crime Category
 
-We built a sequence of Tableau visualizations to progressively narrow the analysis from overall crime patterns to specific high-risk locations.
+A pie chart comparing the grouped categories showed that **theft accounted for 48.89%** of analyzed records
 
-### 1. Crime Distribution
+This made theft a useful starting point for a more focused analysis
 
-A pie chart comparing major crime categories showed that theft represented 48.89% of reported crimes, making it the largest category in the analysis.
+### Step 3: Break Down Theft Offenses
 
-### 2. Theft Breakdown
+A bar chart compared the individual offenses within the theft category
 
-A bar chart was then used to examine individual theft categories. Vehicle theft emerged as the most common type of theft.
+**Vehicle theft emerged as the most common theft offense**, leading us to investigate where these incidents were occurring
 
-### 3. Geographic Distribution
+### Step 4: Map Vehicle Theft by LAPD Area
 
-Vehicle theft incidents were plotted geographically using a symbol map. The 77th Street LAPD area recorded the highest concentration, followed closely by Newton.
+We plotted vehicle-theft incidents on a symbol map and compared their distribution across LAPD areas
 
-### 4. Location Analysis
+The **77th Street area recorded the highest count, followed closely by Newton**
+These findings narrowed the analysis from a citywide issue to two areas for closer examination
 
-Within these two areas, 86.82% of analyzed vehicle thefts occurred on streets, rather than other location types such as parking structures or residential driveways.
+### Step 5: Examine Premises and Streets
 
-Further analysis at the street level identified Broadway, Central Ave, and Main Street as the streets with the highest vehicle-theft counts.
+Within the 77th Street and Newton areas, **86.82% of analyzed vehicle thefts occurred on streets**, rather than premises such as parking structures or residential driveways
 
-## Takeaway
+A street-level breakdown then identified **Broadway, Central Ave, and Main Street** as the streets with the highest vehicle-theft counts
 
-The results demonstrate how crime data can be analyzed at increasingly granular geographic levels—from citywide crime categories to LAPD areas and individual streets.
+### Why This Matters
 
-Rather than distributing resources uniformly across locations, geographic crime patterns can help decision-makers identify areas where targeted patrols, prevention programs, or further investigation may have the greatest impact.
+The analysis translates a broad crime category into specific areas, premises, and streets for further review
 
+Public safety teams could use these findings to prioritize parking-security assessments, community outreach, and more detailed incident analysis. Rather than distributing resources uniformly across locations, geographic crime patterns can help decision-makers identify areas where targeted patrols, prevention programs, or further investigation may have the greatest impact.
 
 
 # Analysis 2: Identity Theft Trends by Gender
@@ -98,63 +84,91 @@ Rather than distributing resources uniformly across locations, geographic crime 
 
 <img width="530" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/5db0ac6c-d880-4c1b-a78f-f81e51e3bfdf">
 
-## Data Preparation
+### Step 1: Check the Reporting Period
 
-Two adjustments were made before visualization:
+We excluded **November 2023** because the available observations appeared incomplete relative to previous months
 
-### Incomplete Period Filtering
+Including an incomplete month could create an artificial decline and distort the interpretation of the trend
 
-November 2023 was excluded because the available observations appeared incomplete relative to previous months and could distort the time-series analysis.
+### Step 2: Organize Dates for Monthly Comparisons
 
-### Date Transformation
+We organized `DATE OCC` into discrete year and month values so incidents could be compared across the analysis period
 
-The DATE OCC field was transformed into discrete month and year values to support month-over-month comparisons.
+The monthly counts describe incidents by their recorded occurrence dates, rather than the dates on which they were reported
 
-## Analysis
+### Step 3: Compare the Time Series
 
-A time-series visualization was created to compare reported identity theft incidents among male and female victims.
+We created a line chart showing monthly identity theft counts for victims recorded as male and female
 
-The analysis revealed a noticeable divergence between the two groups:
+- **Female victims, shown in pink:** Counts were relatively stable in 2020, increased sharply beginning in 2021, and later showed a pronounced peak and decline
+- **Male victims, shown in blue:** Counts remained comparatively stable, without an increase of the same magnitude
 
-Identity theft reports involving female victims increased sharply beginning in 2021, followed by a substantial peak and subsequent decline.
-Reports involving male victims remained comparatively stable, without an increase of the same magnitude.
+The line chart made the timing, direction, and size of the differences easier to see than an overall total would
 
-A line chart was used to highlight the timing, direction, and magnitude of these changes across the analysis period.
+### Step 4: Interpret the Difference
 
-- **Females (Pink Line)**:
-  - The trend was relatively stable in 2020.
-  - There was a sharp increase in reported identity theft cases beginning in 2021, peaking sharply and then dropping rapidly. This suggests a temporary but intense vulnerability or a series of events that particularly affected females.
+The two series showed that recorded identity theft patterns were not uniform across victim groups
 
-- **Males (Blue Line)**:
-  - The trend remained relatively flat throughout the same period, indicating a steady rate of identity theft cases without dramatic peaks.
+The increase involving female victims warrants further investigation, but the visualization does not explain its cause
+Additional incident details and information about reporting practices would be needed to understand the pattern
 
-The linear graph is optimal for visualizing this data as it depicts the rate of change, emphasizing the rapid growth of identity theft incidents between the two groups. This is crucial for analysts and decision-makers to understand the magnitude and timing of the events and to investigate potential causes and remedies for the observed disparities.
+### Why This Matters
 
-## Takeaway
+Breaking down crime trends by victim group can reveal changes hidden in aggregate totals
 
-The results suggest that identity theft trends were not uniform across victim demographics during the analyzed period.
+These findings could help analysts identify questions for further research and assess whether more targeted identity-theft awareness efforts are appropriate. They do not, by themselves, establish differences in underlying vulnerability or individual risk
 
-The sharp change in reports involving female victims warrants deeper investigation into potential contributing factors. Additional demographic, financial, or incident-level data would be necessary to determine the underlying causes.
+## Dataset
 
-From an analytical perspective, segmenting cyber-enabled crime trends by demographic characteristics can help organizations identify patterns that may be obscured when examining aggregate incident counts alone.
+**Source:** [Los Angeles Crime Data from 2020 to Present](https://catalog.data.gov/dataset/crime-data-from-2020-to-present)
 
-## Dataset Description
-The dataset is sourced from incidents of crime in the City of Los Angeles dating back to 2020. The data is transcribed from original crime reports that are typed on paper.There are 847726 columns and 28 rows.
+The project used a historical extract containing **847,726 records and 28 columns**, covering observations from 2020–2023
 
-This dataset contains a range of information, each row represents a unique crime event. In this  dataset, the 'DR_NO' column is of integer data type, representing the report number for each crime incident. The 'Date Rptd,' 'DATE OCC' columns are of date/time data types, capturing the reporting date, date of occurrence, and 'TIME OCC' in integer to represent the number of occurrences of the crime. Geographic details are captured through 'AREA' (integer) and 'AREA NAME (string) representing the numeric code and name of the geographic area. Other columns include 'Crm Cd' (integer) and 'Crm Cd Desc' (string) providing a numeric code and description for the type of crime, and 'Vict Age,' (string) 'Vict Sex,' and 'Vict Descent,' both in integer describing the victim's age, gender, and descent. 
+Each row represents a recorded crime entry
+The source is based on LAPD crime reports and is updated over time, so a current download may differ from the extract used in this project
 
-“Premis Cd” (integer) and “Premis Desc” (string) describe the numeric code and name of the crime location type (condo, police station, etc). Various codes and descriptions are provided for weapon use, and the status of the crime report, such as “Weapon Used Cd” (integer), “Status” (string), “Status Desc” (string); and “Crm Cd 1”, “Crm Cd 2”, “Crm Cd 3”, “Crm Cd 4” all in integers. Crime address is described specifically with “LOCATION” and “Cross Street” both in strings. Additionally, 'LAT' and 'LON' columns both in floats offer precise latitude and longitude coordinates for each crime incident. 
+### Fields Used
 
-## Data Dictionary
-<img width="381" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/c1e8fef7-4d94-4188-a808-ab894b726c3a">
-<img width="380" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/6b0b4aad-3cc5-4bdc-aadb-cf24ac5ecef2">
+| Field | Description and analytical use |
+|---|---|
+| `DR_NO` | Report identifier used to count records |
+| `Date Rptd` | Date the incident was reported |
+| `DATE OCC` | Date the incident occurred, used for monthly trends |
+| `TIME OCC` | Recorded time of occurrence |
+| `AREA` / `AREA NAME` | LAPD area code and name, used for geographic comparisons |
+| `Crm Cd` / `Crm Cd Desc` | Crime code and description, used to group and compare offenses |
+| `Vict Age`, `Vict Sex`, `Vict Descent` | Recorded victim characteristics |
+| `Premis Cd` / `Premis Desc` | Premises code and description, used to compare location types |
+| `LOCATION` / `Cross Street` | Location information used for street-level analysis |
+| `LAT` / `LON` | Coordinates used to map incidents |
 
+Other fields describe weapon use, report status, and additional crime codes
 
-## Dataset Used
-https://catalog.data.gov/dataset/crime-data-from-2020-to-present
+### Original Data Dictionary
 
-<img width="473" alt="image" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/3cb655b0-a0d1-4b60-a075-f4f8a866ab53">
+<img width="450" alt="Los Angeles crime dataset data dictionary, first section" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/c1e8fef7-4d94-4188-a808-ab894b726c3a">
 
+<img width="450" alt="Los Angeles crime dataset data dictionary, second section" src="https://github.com/thai-tran-le/MIST4610-Project-2/assets/148096037/6b0b4aad-3cc5-4bdc-aadb-cf24ac5ecef2">
 
-## Contributors:
-Thai Le, Alvia Pham, Essex Glowaki, Kenneth Johnson, McKenna Sloan
+## Tools and Skills
+
+- **Tableau:** dashboards, calculated fields, table calculations, filtering, and interactive visualizations
+- **Data preparation:** grouping detailed crime descriptions and checking incomplete periods
+- **Geospatial analysis:** comparing incidents across LAPD areas, premises, and streets
+- **Trend analysis:** examining monthly identity theft patterns across victim groups
+- **Data storytelling:** connecting findings with practical questions and potential prevention priorities
+
+## Limitations
+
+The analysis describes **recorded incidents**, not all crime that occurred
+Reporting behavior, missing information, and data quality may influence the observed patterns
+
+Geographic counts are not adjusted for population, parking availability, or other measures of exposure
+Similarly, the victim comparisons use the source's recorded sex field and do not establish differences in individual risk
+
+The findings support further investigation and planning
+They do not establish causation or demonstrate that a proposed intervention would reduce crime
+
+## Contributors
+
+Thai Le · Alvia Pham · Essex Glowaki · Kenneth Johnson · McKenna Sloan
