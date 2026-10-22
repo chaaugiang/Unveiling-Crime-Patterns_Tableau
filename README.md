@@ -2,7 +2,7 @@
 
 **Tableau · Data Visualization · Geospatial Analysis · Data Storytelling**
 
-An exploratory analysis of **847K+ Los Angeles crime records from 2020–2023**, examining where vehicle theft is concentrated and how identity theft patterns differ across victim groups
+An exploratory analysis of **847K+ Los Angeles crime records from 2020 - 2023**, examining where vehicle theft is concentrated and how identity theft patterns differ across victim groups
 
 ## Project Overview
 
